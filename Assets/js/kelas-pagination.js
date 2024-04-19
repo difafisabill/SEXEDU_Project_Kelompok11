@@ -1,30 +1,56 @@
-let link = document.getElementsByClassName("link");
-let currentValue=1;
 
-function activeLink(){
-    for(l of link){
-        l.classList.remove("active");
-    }
-    event.target.classList.add("active");
-    currentValue = event.target.value;
-}
+let thisPage = 1;
+let limit = 6;
+let list = document.querySelectorAll('.card-course-list .card');
 
-function backBtn(){
-    if(currentValue > 1){
-        for(l of link){
-            l.classList.remove("active");
+function loadItem(){
+    let beginGet = limit * (thisPage - 1);
+    let endGet = limit * thisPage - 1;
+    list.forEach((card, key)=>{
+        if(key >= beginGet && key <= endGet){ 
+            card.style.display = 'block';
+        }else{
+            card.style.display = 'none';
         }
-        currentValue--;
-        link[currentValue-1].classList.add("active");
+    })
+    listPage();
+}
+loadItem();
+
+function listPage(){
+    let count = Math.ceil(list.length / limit);
+    const listPageContainer = document.querySelector('.listPage');
+    document.querySelector('.listPage').innerHTML = '';
+
+    if(thisPage != 1){
+        let prev = document.createElement('li');
+        prev.innerText = 'Prev';
+        prev.setAttribute('onclick', "changePage(" + (thisPage - 1) + ")");
+        prev.style.color = '#9E9D9D'; 
+        prev.style.fontSize = '20px'; 
+        listPageContainer.appendChild(prev);
+    }
+
+    for(i = 1; i <= count; i++){
+        let newPage = document.createElement('li');
+        newPage.innerText = i;
+        if(i == thisPage){
+            newPage.classList.add('active');
+        }
+        newPage.setAttribute('onclick', "changePage(" + i + ")");
+        document.querySelector('.listPage').appendChild(newPage);
+    }
+
+    if(thisPage != count){
+        let next = document.createElement('li');
+        next.innerText = 'Next';
+        next.setAttribute('onclick', "changePage(" + (thisPage + 1) + ")");
+        next.style.color = '#9E9D9D'; 
+        next.style.fontSize = '20px'; 
+        listPageContainer.appendChild(next);
     }
 }
-
-function nextBtn(){
-    if(currentValue < 5){
-        for(l of link){
-            l.classList.remove("active");
-        }
-        currentValue++;
-        link[currentValue-1].classList.add("active");
-    }
+function changePage(i){
+    thisPage = i;
+    loadItem();
 }

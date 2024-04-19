@@ -343,6 +343,13 @@ li,a{
     display: flex;
   }
 
+  .box-menu .container .row .card{
+    border-radius: 25px;
+    padding: 10px;
+    height: 500px;
+    
+  }
+
   /* Review */
   .review{
     padding: 50px 0px;

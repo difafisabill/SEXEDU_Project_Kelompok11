@@ -35,7 +35,7 @@ navbar{
 }
 
 .nav-link{
-    color:black;
+    
     font-weight: 500;
     position: relative;
 }
@@ -64,6 +64,5 @@ navbar{
 }
 
 .container-fluid a{
-    
     padding: 10px 20px;
 }

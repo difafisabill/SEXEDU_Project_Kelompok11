@@ -7,7 +7,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./Assets/css/navbar.css">
     <link rel="stylesheet" href="./Assets/css/kelas.css">
-    
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <title>Kelas</title>
   
 </head>
@@ -68,8 +68,14 @@
         </div>
        
         <div class="class-container">
-           <!-- Left Class Filter-->
+           <!-- Left Class Filter--> 
             <div class="class-filter-left">
+              <!-- Search -->
+              <div class="container-fluid">
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" id="myInput" type="search" placeholder="Search" aria-label="Search">
+                </form>
+              </div>
                 <div class="filter-header">
                     <p>Filter</p>
                     <a href="#">Reset</a>
@@ -226,7 +232,7 @@
                       <div class="card-contain"> 
                         <img src="./Assets/images/image 2.png" alt="course2" class="card-img-top">
                         <div class="card-body">
-                          <h5 class="card-title">Seksualitas Sehat: Pemahaman Dasar</h5>
+                          <h5 class="card-title">Etika Seksual dan Tanggung Jawab</h5>
                           <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eum similique repellat a laborum!</p>  
                           <hr/>
                           <div class="row">
@@ -244,7 +250,7 @@
                       <div class="card-contain"> 
                         <img src="./Assets/images/image 3.png" alt="course3" class="card-img-top">
                         <div class="card-body">
-                          <h5 class="card-title">Seksualitas Sehat: Pemahaman Dasar</h5>
+                          <h5 class="card-title">Kesehatan Reproduksi dan Kontrasepsi</h5>
                           <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eum similique repellat a laborum!</p>
                           <hr/>
                           <div class="row">
@@ -265,7 +271,7 @@
                       <div class="card-contain"> 
                         <img src="./Assets/images/image 4.png" alt="course4" class="card-img-top">
                         <div class="card-body">
-                          <h5 class="card-title">Seksualitas Sehat: Pemahaman Dasar</h5>
+                          <h5 class="card-title">Seksualitas dan Perubahan Fisik</h5>
                           <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eum similique repellat a laborum!</p>
                           <hr/>
                           <div class="row">
@@ -283,7 +289,7 @@
                       <div class="card-contain"> 
                         <img src="./Assets/images/image 5.png" alt="course5" class="card-img-top">
                         <div class="card-body">
-                          <h5 class="card-title">Seksualitas Sehat: Pemahaman Dasar</h5>
+                          <h5 class="card-title">Komunikasi Pasangan dan Keterampilan Seksual</h5>
                           <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eum similique repellat a laborum!</p>
                           <hr/>
                           <div class="row">
@@ -301,7 +307,7 @@
                       <div class="card-contain"> 
                         <img src="./Assets/images/image 6.png" alt="course6" class="card-img-top">
                         <div class="card-body">
-                          <h5 class="card-title">Seksualitas Sehat: Pemahaman Dasar</h5>
+                          <h5 class="card-title">Seksualitas dan Disfungsi Seksual</h5>
                           <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eum similique repellat a laborum!</p>   
                           <hr/>
                           <div class="row">
@@ -322,7 +328,7 @@
                       <div class="card-contain"> 
                         <img src="./Assets/images/image 7.png" alt="course7" class="card-img-top">
                         <div class="card-body">
-                          <h5 class="card-title">Seksualitas Sehat: Pemahaman Dasar</h5>
+                          <h5 class="card-title">Seksualitas dan Kesehatan Psikologis</h5>
                           <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eum similique repellat a laborum!</p>
                           <hr/>
                           <div class="row">
@@ -340,7 +346,7 @@
                       <div class="card-contain"> 
                         <img src="./Assets/images/image 8.png" alt="course8" class="card-img-top">
                         <div class="card-body">
-                          <h5 class="card-title">Seksualitas Sehat: Pemahaman Dasar</h5>
+                          <h5 class="card-title">Seksualitas dan Pendidikan Anak</h5>
                           <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eum similique repellat a laborum!</p>
                           <hr/>
                           <div class="row">
@@ -358,7 +364,7 @@
                       <div class="card-contain"> 
                         <img src="./Assets/images/image 1.png" alt="course9" class="card-img-top">
                         <div class="card-body">
-                          <h5 class="card-title">Seksualitas Sehat: Pemahaman Dasar</h5>
+                          <h5 class="card-title">Seksualitas dan Keterlibatan Sosial</h5>
                           <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut eum similique repellat a laborum!</p>
                           <hr/>
                           <div class="row">
@@ -437,5 +443,19 @@
     </footer>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
       <script src="./Assets/js/kelas-pagination.js"></script>
+
+      <!--Script Awal Jquerry-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      <script>
+      $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+          var value = $(this).val().toLowerCase();
+          $(".card").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
+        });
+      });
+      </script>  
+      <!--Script Akhir Jquerry-->
 </body>
 </html>

@@ -173,6 +173,10 @@ button {
   margin-top: 10px;
   font-weight: bold;
 }
+#our-team {
+  cursor: pointer;
+}
+
 /* Contact us */
 section.ourteam button{
   font-size: 18px;
@@ -191,6 +195,7 @@ section.ourteam button:hover{
  
  .modal-box {
    display: flex;
+  
    flex-direction: column;
    align-items: center;
    max-width: 380px;

@@ -1,56 +1,64 @@
+$(document).ready(function() {
+    let thisPage = 1;
+    let limit = 6;
+    let list = $('.card-course-list .card');
 
-let thisPage = 1;
-let limit = 6;
-let list = document.querySelectorAll('.card-course-list .card');
+    function loadItem() {
+        let beginGet = limit * (thisPage - 1);
+        let endGet = limit * thisPage - 1;
+        
+        list.each(function(key, card) {
+            if (key >= beginGet && key <= endGet) {
+                $(card).css('display', 'block');
+            } else {
+                $(card).css('display', 'none');
+            }
+        });
 
-function loadItem(){
-    let beginGet = limit * (thisPage - 1);
-    let endGet = limit * thisPage - 1;
-    list.forEach((card, key)=>{
-        if(key >= beginGet && key <= endGet){ 
-            card.style.display = 'block';
-        }else{
-            card.style.display = 'none';
-        }
-    })
-    listPage();
-}
-loadItem();
-
-function listPage(){
-    let count = Math.ceil(list.length / limit);
-    const listPageContainer = document.querySelector('.listPage');
-    document.querySelector('.listPage').innerHTML = '';
-
-    if(thisPage != 1){
-        let prev = document.createElement('li');
-        prev.innerText = 'Prev';
-        prev.setAttribute('onclick', "changePage(" + (thisPage - 1) + ")");
-        prev.style.color = '#9E9D9D'; 
-        prev.style.fontSize = '20px'; 
-        listPageContainer.appendChild(prev);
+        listPage();
     }
 
-    for(i = 1; i <= count; i++){
-        let newPage = document.createElement('li');
-        newPage.innerText = i;
-        if(i == thisPage){
-            newPage.classList.add('active');
-        }
-        newPage.setAttribute('onclick', "changePage(" + i + ")");
-        document.querySelector('.listPage').appendChild(newPage);
-    }
-
-    if(thisPage != count){
-        let next = document.createElement('li');
-        next.innerText = 'Next';
-        next.setAttribute('onclick', "changePage(" + (thisPage + 1) + ")");
-        next.style.color = '#9E9D9D'; 
-        next.style.fontSize = '20px'; 
-        listPageContainer.appendChild(next);
-    }
-}
-function changePage(i){
-    thisPage = i;
     loadItem();
-}
+
+    function listPage() {
+        let count = Math.ceil(list.length / limit);
+        const listPageContainer = $('.listPage');
+        listPageContainer.empty();
+
+        if (thisPage != 1) {
+            let prev = $('<li>').text('Prev').css({
+                color: '#9E9D9D',
+                fontSize: '20px'
+            }).on('click', function() {
+                changePage(thisPage - 1);
+            });
+            listPageContainer.append(prev);
+        }
+
+        for (let i = 1; i <= count; i++) {
+            let newPage = $('<li>').text(i);
+            if (i === thisPage) {
+                newPage.addClass('active');
+            }
+            newPage.on('click', function() {
+                changePage(i);
+            });
+            listPageContainer.append(newPage);
+        }
+
+        if (thisPage != count) {
+            let next = $('<li>').text('Next').css({
+                color: '#9E9D9D',
+                fontSize: '20px'
+            }).on('click', function() {
+                changePage(thisPage + 1);
+            });
+            listPageContainer.append(next);
+        }
+    }
+
+    function changePage(i) {
+        thisPage = i;
+        loadItem();
+    }
+});

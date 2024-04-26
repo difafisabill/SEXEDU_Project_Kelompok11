@@ -38,9 +38,19 @@
     display: flex;
     gap: 55px;
 }
+.class-container .class-filter-left {
+    margin: 50px 0px;
+}
+.class-container .class-filter-left .filter-header{
+    margin-top: 30px;
+}
+.class-filter-left button{
+    color:#AC35E4;
+}
 .class .class-container .class-filter-left .filter-header p{
     font-size: 20px;
     font-weight: bold;
+    
 }
 .class .class-container .class-filter-left{
     width: 17%;
@@ -76,16 +86,17 @@
 }
 .class-container .class-courses-right .class-courses-header h3{
     font-weight: 600;
+    margin-bottom: 25px;
     
 }
 .card-course-list{
-    display: flex;
-   
-   
-    
+    /* penerapan grid */
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap:10px; 
 }
 .card-course-list .card{
-    margin: 20px;
+    margin: 10px;
     padding: 10px;
     background-color: #EEE4FD;
     border-radius: 25px;
@@ -147,15 +158,9 @@ footer{
     width: 100%;  
  }
  .content-pagination{
-   
    display: flex;
-   
    align-items: center;
    justify-content: center;
-
-
-
-
  }
  .content-pagination ul{
     display: flex;
@@ -196,7 +201,7 @@ footer{
     transition: all 0.3s;
  }
 .card:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 

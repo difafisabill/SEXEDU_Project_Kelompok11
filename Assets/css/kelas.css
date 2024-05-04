@@ -96,6 +96,7 @@
     gap:10px; 
 }
 .card-course-list .card{
+    
     margin: 10px;
     padding: 10px;
     background-color: #EEE4FD;
@@ -104,7 +105,9 @@
     height: 480px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }
-
+.card-course-list .card a{
+    text-decoration: none;
+}
 
 /* footer */
 footer{
@@ -203,6 +206,7 @@ footer{
 .card:hover{
     transform: scale(1.05);
 }
+
 
 
 
